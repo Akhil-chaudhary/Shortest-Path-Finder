@@ -10,7 +10,8 @@
      <nav class="navbar navbar-inverse">
        <div class="container-fluid">
          <div class="navbar-header">
-           <a id="refreshButton" class="navbar-brand" href="#">Pathfinding Visualizer</a>
+           <a id="refreshButton" class="navbar-brand" href="#">Shortest Path Finder</a><br>
+           <a href="#" style="float: right;" onclick="showDiv()" type="button"><img width="30px" src="css/icons/help.png"/></a>
          </div>
          <ul class="nav navbar-nav">
            <li class="dropdown">
@@ -40,8 +41,7 @@
              </ul>
            </li>
            <li id='startButtonAddObject'><a href="#">Add Bomb</a></li>
-           <li id='startButtonStart'><button id="actualStartButton" class="btn btn-default navbar-btn" type="button">Visualize!</button></li>
-           <li id='startButtonClearBoard'><a href="#">Clear Board</a></li>
+           <li id='startButtonClearBoard'><a href="#">Clear all</a></li>
            <li id='startButtonClearWalls'><a href="#">Clear Walls &amp; Weights</a></li>
            <li id='startButtonClearPath'><a href="#">Clear Path</a></li>
            <li class="dropdown">
@@ -53,10 +53,19 @@
                <li id='adjustSlow'><a href="#">Slow</a></li>
              </ul>
            </li>
+           <li id='startButtonStart'><button id="actualStartButton" onclick="closeDiv()" class="btn btn-default navbar-btn rainbow-1" type="button">Visualize!</button></li>
          </ul>
        </div>
      </nav>
    </div>
+   <script>
+     function showDiv() {
+   document.getElementById('mainText').style.display = "block";
+}
+function closeDiv() {
+   document.getElementById('mainText').style.display = "none";
+}
+   </script>
     <div id="tutorial">
       <h3>Welcome to Shortest Path Finder!</h3>
       <h6>This short tutorial will walk you through all of the features of this application.</h6>
@@ -64,17 +73,19 @@
       <div id="tutorialCounter">1/9</div>
       <button id="nextButton" class="btn btn-default navbar-btn" type="button">Next</button>
       <button id="previousButton" class="btn btn-default navbar-btn" type="button">Previous</button>
-      <button id="skipButton" class="btn btn-default navbar-btn" type="button">Skip Tutorial</button>
+      <button id="skipButton" class="btn btn-default navbar-btn rainbow-1" type="button">Skip Tutorial</button>
     </div>
     <div id='mainGrid'>
       <div id='mainText'>
+        
+        <a href="#" style="float: right;transform:translateY(-15px);" onclick="closeDiv()" type="button"><img width="15px" src="css/icons/close.png"/></a>
         <ul>
           <li>
             <div class="start"></div>Start Node</li>
           <li>
             <div class="target"></div>Target Node</li>
           <li id="bombLegend">
-            <div class="object"></div>Bomb Node</li>
+            <div class="object"></div>Bomb</li>
           <li id="weightLegend">
             <div class="borderlessWeight"></div>Weight Node</li>
           <li>
@@ -82,9 +93,9 @@
           <li>
             <div class="visited"></div><div class="visitedobject"></div>Visited Nodes</li>
           <li>
-            <div class="shortest-path"></div>Shortest-path Node</li>
+            <div class="shortest-path"></div>Shortest Path</li>
           <li>
-            <div class="wall"></div>Wall Node</li>
+            <div class="wall"></div>Wall</li>
         </ul>
       </div>
       <div id="algorithmDescriptor">Pick an algorithm and visualize it!</div>

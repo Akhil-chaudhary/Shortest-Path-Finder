@@ -9,7 +9,8 @@
 .otherother {
   border: 2px solid grey;
 }*/
-
+@import url("https://fonts.googleapis.com/css?family=Lato:400,100,300,700,100italic,300italic,400italic,700italic,900,900italic");
+@import url("https://fonts.googleapis.com/css?family=Raleway:400,700");
 html{
   height: 900px;
 }
@@ -292,14 +293,17 @@ html{
 
 #algorithmDescriptor {
   text-align: center;
+  font-size: 30px;
+  font-weight: 900;
   color: #2a1b3d;
-  padding: 15px 25px 15px 25px;
+  padding-bottom: 25px;
+
 }
 
 #mainText > ul li {
   display: inline-block;
   list-style: none;
-  padding: 0 28px 0 0;
+  padding: 0 20px 0 0;
 }
 
 #actualStartButton {
@@ -415,7 +419,9 @@ html{
   border-collapse:collapse;
   /*position: center*/
 }
-
+#mainText{
+  display:none;
+}
 #mainText div {
   /*border: 1px solid black;*/
   width: 25px;
@@ -439,6 +445,17 @@ html{
   width: 200px;
   z-index: 2;
 }*/
+
+.rainbow-1:hover{
+  background-image: linear-gradient(90deg, #00C0FF 0%, #FFCF00 49%, #FC4F4F 80%, #00C0FF 100%);
+  animation:slidebg 5s linear infinite;
+}
+
+@keyframes slidebg {
+  to {
+    background-position:20vw;
+  }
+}
 
 #board td{
   /*border: 1px solid rgb(175, 216, 248);*/
@@ -4842,6 +4859,9 @@ fieldset[disabled] .input-group-btn .btn-default.active {
   border: none;
   border-radius: 0px;
 }
+.navbar-header{
+  width: 100%;
+}
 @media (min-width: 768px) {
   .navbar-header {
     float: left;
@@ -7057,3 +7077,6 @@ footer p {
 .show {display:block;}
 
 }
+
+/*---------------Top Menu-----------*/
+
